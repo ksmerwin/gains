@@ -5,14 +5,18 @@
 //  Created by Developer on 1/5/24.
 //
 
+
 import SwiftUI
 
-struct TextFieldModifer: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct TextFieldModifer: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .padding(16)
+            .background(Color(.systemGray3))
+            .cornerRadius(10)
+            .padding(.horizontal, 16)
+            .padding(.top)
+            .foregroundColor(.white)
     }
-}
-
-#Preview {
-    TextFieldModifer()
 }

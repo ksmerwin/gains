@@ -1,5 +1,5 @@
 //
-//  AddEmailView.swift
+//  RegisterView.swift
 //  Gains
 //
 //  Created by Developer on 1/5/24.
@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-struct AddEmailView: View {
-    @State private var email = ""
-    @State private var username = ""
-    @State private var password = ""
-    @State private var fullname = ""
+struct RegisterView: View {
+    @Environment(\.dismiss) var dismiss
+//    @StateObject var viewModel: RegisterViewModel
+
     
+    @State var username = ""
+    @State var email = ""
+    @State var password = ""
+    @State var fullname = ""
+   
     var body: some View {
         
-        
+
         VStack() {
             
             Image("liftingweights")
@@ -38,60 +42,41 @@ struct AddEmailView: View {
                 )
             
             VStack(alignment: .leading) {
-            Text("Create an Account")
-                .foregroundColor(.white)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.horizontal)
-                .padding(.vertical)
-            
+                Text("Create an Account")
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.horizontal)
+                    .padding(.vertical)
                 
                 
-            TextField("Email", text: $email)
-                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                .padding(16)
-                .background(Color(.systemGray3))
-                .cornerRadius(10)
-                .padding(.horizontal, 16)
-                .padding(.top)
-                .foregroundColor(.white)
-            
-            SecureField("Password", text: $password)
-                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                .padding(16)
-                .background(Color(.systemGray3))
-                .cornerRadius(10)
-                .padding(.horizontal, 16)
-                .padding(.top)
-                .foregroundColor(.white)
-            
-            TextField("Username", text: $username)
-                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                .padding(16)
-                .background(Color(.systemGray3))
-                .cornerRadius(10)
-                .padding(.horizontal, 16)
-                .padding(.top)
-                .foregroundColor(.white)
-            
-            TextField("Full Name", text: $fullname)
-                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                .padding(16)
-                .background(Color(.systemGray3))
-                .cornerRadius(10)
-                .padding(.horizontal, 16)
-                .padding(.top)
-                .foregroundColor(.white)
+                
+                TextField("Email", text: $email)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(TextFieldModifer())
+                
+                SecureField("Password", text: $password)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(TextFieldModifer())
+                
+                TextField("Username", text: $username)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(TextFieldModifer())
+                
+                TextField("Full Name", text: $fullname)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(TextFieldModifer())
             }
             
-          
-            Spacer()
+            
             Spacer()
             Spacer()
             Spacer()
             
+            
             Button {
-                print("Sign Up", $email, $password, $username, $fullname)
+//                Task { try await viewModel.createUser()}
+//                                dismiss()
             } label: {
                 
                 Text("Sign Up")
@@ -107,16 +92,17 @@ struct AddEmailView: View {
             .background(Color.red)
             
             Spacer()
-                        
             
-        }
+            
+         }
         .background(Color.black)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        
     }
     
 }
 
 
 #Preview {
-    AddEmailView()
+        RegisterView( )
 }
