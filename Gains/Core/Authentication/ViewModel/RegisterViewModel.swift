@@ -16,12 +16,23 @@ class RegisterViewModel: ObservableObject {
     @Published var fullname = ""
     
     
+    @MainActor
     func createUser() async throws {
-        try await AuthService.shared.createUser(email: email, password: password, username: username, fullname: fullname)
+        try await AuthService.shared.createUser(email: email, password: password, username: username)
         
         username = ""
         email = ""
         password = ""
         fullname = ""
+        
     }
+    
+    func validateForm() -> Bool {
+        if username.isEmpty || !email.contains("@") || email.isEmpty || password.isEmpty || fullname.isEmpty {
+          return false
+        }
+        return true
+      }
+    
+    
 }

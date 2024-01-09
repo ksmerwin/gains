@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-//        NavigationStack {
+        NavigationStack {
             VStack {
                 Spacer()
                 Image(systemName: "figure.strengthtraining.traditional")
@@ -50,7 +50,8 @@ struct LoginView: View {
                 
                 
                 NavigationLink{
-//                    RegisterView()
+                    RegisterView()
+                        .navigationBarBackButtonHidden(true)
                      
                 } label: {
                     
@@ -74,7 +75,7 @@ struct LoginView: View {
         }
     }
     
-//}
+}
 
 #Preview {
     LoginView()

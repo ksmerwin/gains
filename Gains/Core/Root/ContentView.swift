@@ -16,11 +16,11 @@ struct ContentView: View {
     var body: some View {
         Group {
             if viewModel.userSession == nil {
-//                LoginView().environmentObject(registrationViewModel)
-            } else {
-//            if let currentUser = viewModel.currentUser{
-                Text("Logged in")
+                LoginView().environmentObject(registrationViewModel)
+            } else if let currentUser = viewModel.currentUser{
+                MainTabView(user: currentUser)
             }
+            
         }
     }
 }

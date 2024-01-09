@@ -34,7 +34,7 @@ class AuthService {
 //    }
     
     @MainActor
-    func createUser(email: String, password: String, username: String, fullname: String) async throws {
+    func createUser(email: String, password: String, username: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user

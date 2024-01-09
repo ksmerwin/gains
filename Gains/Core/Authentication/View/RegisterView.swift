@@ -9,14 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @Environment(\.dismiss) var dismiss
-//    @StateObject var viewModel: RegisterViewModel
-
-    
-    @State var username = ""
-    @State var email = ""
-    @State var password = ""
-    @State var fullname = ""
-   
+    @EnvironmentObject var viewModel: RegisterViewModel
     var body: some View {
         
 
@@ -51,19 +44,19 @@ struct RegisterView: View {
                 
                 
                 
-                TextField("Email", text: $email)
+                TextField("Email", text: $viewModel.email)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(TextFieldModifer())
                 
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $viewModel.password)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(TextFieldModifer())
                 
-                TextField("Username", text: $username)
+                TextField("Username", text: $viewModel.username)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(TextFieldModifer())
                 
-                TextField("Full Name", text: $fullname)
+                TextField("Full Name", text: $viewModel.fullname)
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(TextFieldModifer())
             }
@@ -75,21 +68,21 @@ struct RegisterView: View {
             
             
             Button {
-//                Task { try await viewModel.createUser()}
-//                                dismiss()
+                Task { try await viewModel.createUser()}
+                              
             } label: {
                 
                 Text("Sign Up")
                     .foregroundColor(.white)
-                    .background(Color.red)
+                    .background(!viewModel.validateForm() ? Color.clear : Color.red)
                     .font(.headline)
                     .fontWeight(.semibold)
                     .frame(width: 360, height: 50)
-                    .cornerRadius(6)
                     .overlay(RoundedRectangle(cornerRadius: 6)
                         .stroke(.clear, lineWidth: 1))
             }
-            .background(Color.red)
+            .background(!viewModel.validateForm() ? Color.accentColor : Color.red)
+            .disabled(!viewModel.validateForm())
             
             Spacer()
             
@@ -97,6 +90,16 @@ struct RegisterView: View {
          }
         .background(Color.black)
         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading)  {
+                Image(systemName: "arrowshape.backward.fill")
+                    .imageScale(.large)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }
+        }
         
     }
     
@@ -104,5 +107,5 @@ struct RegisterView: View {
 
 
 #Preview {
-        RegisterView( )
+        RegisterView()
 }
