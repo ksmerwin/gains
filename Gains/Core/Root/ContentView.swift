@@ -14,6 +14,7 @@ struct ContentView: View {
     @StateObject var registrationViewModel = RegisterViewModel()
     
     var body: some View {
+        
         Group {
             if viewModel.userSession == nil {
                 LoginView().environmentObject(registrationViewModel)
@@ -22,6 +23,7 @@ struct ContentView: View {
             }
             
         }
+        
     }
 }
 

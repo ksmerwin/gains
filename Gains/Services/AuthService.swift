@@ -38,6 +38,8 @@ class AuthService {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
+            let user = User(id: result.user.uid, username: username, email: email, level: nil)
+            self.currentUser = user
 //            await uploadUserData(uid: result.user.uid, username: username, email:email)
         }
         catch {

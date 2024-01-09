@@ -34,6 +34,8 @@
 		4BF5E3852B4CB60D008E3216 /* WorkoutSplit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5E3842B4CB60D008E3216 /* WorkoutSplit.swift */; };
 		4BF5E3872B4CB8D3008E3216 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5E3862B4CB8D3008E3216 /* Workout.swift */; };
 		4BF5E3892B4CB980008E3216 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5E3882B4CB980008E3216 /* Exercise.swift */; };
+		4BF5E38B2B4DE6AD008E3216 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5E38A2B4DE6AD008E3216 /* FeedCell.swift */; };
+		4BF5E38D2B4DE783008E3216 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5E38C2B4DE782008E3216 /* CircularProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		4BF5E3842B4CB60D008E3216 /* WorkoutSplit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSplit.swift; sourceTree = "<group>"; };
 		4BF5E3862B4CB8D3008E3216 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		4BF5E3882B4CB980008E3216 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4BF5E38A2B4DE6AD008E3216 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		4BF5E38C2B4DE782008E3216 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				4BF5E3712B48B2D0008E3216 /* TextFieldModifer.swift */,
+				4BF5E38A2B4DE6AD008E3216 /* FeedCell.swift */,
+				4BF5E38C2B4DE782008E3216 /* CircularProfileImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -449,6 +455,8 @@
 				4BF5E3872B4CB8D3008E3216 /* Workout.swift in Sources */,
 				4B88B46F2B488C5E00F5F0F4 /* GainsApp.swift in Sources */,
 				4BF5E3852B4CB60D008E3216 /* WorkoutSplit.swift in Sources */,
+				4BF5E38D2B4DE783008E3216 /* CircularProfileImageView.swift in Sources */,
+				4BF5E38B2B4DE6AD008E3216 /* FeedCell.swift in Sources */,
 				4BF5E3762B48F6EC008E3216 /* AuthService.swift in Sources */,
 				4BF5E37E2B4CA9DB008E3216 /* MainTabView.swift in Sources */,
 			);
