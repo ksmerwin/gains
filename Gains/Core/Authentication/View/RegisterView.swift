@@ -35,33 +35,18 @@ struct RegisterView: View {
                 )
             
             VStack(alignment: .leading) {
-                Text("Create an Account")
+                Text("Welcome, \(viewModel.username)!")
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.horizontal)
                     .padding(.vertical)
                 
-                
-                
-                TextField("Email", text: $viewModel.email)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    .modifier(TextFieldModifer())
-                
-                SecureField("Password", text: $viewModel.password)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    .modifier(TextFieldModifer())
-                
-                TextField("Username", text: $viewModel.username)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    .modifier(TextFieldModifer())
-                
-                TextField("Full Name", text: $viewModel.fullname)
-                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                    .modifier(TextFieldModifer())
+               
             }
             
             
+            Spacer()
             Spacer()
             Spacer()
             Spacer()
@@ -74,15 +59,14 @@ struct RegisterView: View {
                 
                 Text("Sign Up")
                     .foregroundColor(.white)
-                    .background(!viewModel.validateForm() ? Color.clear : Color.red)
+                    .background(Color("BloodRed"))
                     .font(.headline)
                     .fontWeight(.semibold)
                     .frame(width: 360, height: 50)
                     .overlay(RoundedRectangle(cornerRadius: 6)
                         .stroke(.clear, lineWidth: 1))
             }
-            .background(!viewModel.validateForm() ? Color.accentColor : Color.red)
-            .disabled(!viewModel.validateForm())
+            .background(Color("BloodRed"))
             
             Spacer()
             

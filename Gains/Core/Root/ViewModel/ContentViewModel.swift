@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ContentViewModel.swift
 //  Gains
 //
 //  Created by Developer on 1/3/24.
@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 import Combine
-
+import FirebaseAuth
 
 class ContentViewModel: ObservableObject {
     
@@ -21,6 +21,7 @@ class ContentViewModel: ObservableObject {
     init() {
         setupSubscribers()
     }
+    
     
     func setupSubscribers(){
         service.$userSession.sink { [weak self] userSession in

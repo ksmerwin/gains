@@ -29,12 +29,7 @@ struct HomeView: View {
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    Image("Instagram_logo_PNG11")
-//                        .resizable()
-//                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 32)
-//                } this will hold the messages 
-//                
+//
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Image(systemName: "paperplane")
                         .imageScale(.large)

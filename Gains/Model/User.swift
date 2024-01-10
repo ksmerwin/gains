@@ -7,6 +7,8 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
+
 
 struct User: Identifiable, Hashable, Codable {
     let id: String
@@ -16,6 +18,8 @@ struct User: Identifiable, Hashable, Codable {
     var bio: String?
     let email: String
     let level: String?
+    // levels will be novice, advanced, expert, Pro
+    
     
     var isCurrentUser: Bool {
         guard let currentUid = Auth.auth().currentUser?.uid else {return false}
@@ -28,7 +32,7 @@ struct User: Identifiable, Hashable, Codable {
 extension User {
     static var MOCK_USERS: [User] = [
         .init(id: NSUUID().uuidString, username: "batman", profileImageUrl: nil, fullname: "Bruce Wayne", bio: "dark knight", email: "batman@gmail.com", level:nil),
-        .init(id: NSUUID().uuidString, username: "superman", profileImageUrl: nil, fullname: "Clark Kent", bio: "No to krypto", email: "superman@gmail.com", level:nil),
+        .init(id: NSUUID().uuidString, username: "superman", profileImageUrl: nil, fullname: "Clark Kent", bio: "No to krypto", email: "superman@gmail.com", level: "experienced"),
         .init(id: NSUUID().uuidString, username: "kevmer", profileImageUrl: nil, fullname: "Kevin Merwin", bio: "yolo", email: "primemerwinian@gmail.com", level:nil),
         .init(id: NSUUID().uuidString, username: "heisenberg", profileImageUrl: nil, fullname: "Walter White", bio: "Heisenberg", email: "walterwhite@gmail.com", level:nil),
     ]

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @StateObject var viewModel = LoginViewModel()
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -30,10 +33,18 @@ struct LoginView: View {
                     .fontWeight(.semibold)
                 
                 
+                TextField("", text: $viewModel.email, prompt: Text("Email").foregroundColor(.gray))
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(TextFieldModifer())
+                
+                SecureField("", text: $viewModel.password, prompt: Text("Password").foregroundColor(.gray))
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .modifier(TextFieldModifer())
+                
                 Spacer()
                 
                 Button {
-                    print("Login")
+                    Task{ try await viewModel.signIn() }
                 } label: {
                     
                     Text("Login")
@@ -50,14 +61,14 @@ struct LoginView: View {
                 
                 
                 NavigationLink{
-                    RegisterView()
+                    AddEmailView()
                         .navigationBarBackButtonHidden(true)
                      
                 } label: {
                     
                     Text("Join")
                         .foregroundColor(.white)
-                        .background(Color.red)
+                        .background(Color("BloodRed"))
                         .font(.headline)
                         .fontWeight(.semibold)
                         .frame(width: 360, height: 50)
@@ -65,7 +76,7 @@ struct LoginView: View {
                         .overlay(RoundedRectangle(cornerRadius: 6)
                             .stroke(.clear, lineWidth: 1))
                 }
-                .background(Color.red)
+                .background(Color("BloodRed"))
                 .padding(.vertical)
                 
             }

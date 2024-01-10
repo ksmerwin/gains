@@ -31,7 +31,7 @@ struct MainTabView: View {
                 Text("Messages")
                     .onAppear{selectedIndex = 3}
                     .tabItem { Image(systemName: "heart") }.tag(3)
-                Text("Profile")
+                CurrentProfileView(user: user)
                 //CurrentProfileView(user: user)
                     .onAppear{selectedIndex = 4}
                     .tabItem { Image(systemName: "person") }.tag(4)

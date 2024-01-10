@@ -1,5 +1,5 @@
 //
-//  AddPasswordView.swift
+//  AddEmailView.swift
 //  Gains
 //
 //  Created by Developer on 1/5/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddPasswordView: View {
+struct AddEmailView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: RegisterViewModel
     
@@ -38,7 +38,7 @@ struct AddPasswordView: View {
                 )
             
             VStack(alignment: .leading) {
-                Text("Add an Password")
+                Text("Add an Email")
                     .foregroundColor(.white)
                     .font(.title)
                     .fontWeight(.bold)
@@ -47,7 +47,7 @@ struct AddPasswordView: View {
                 
                 
                 
-                SecureField("", text: $viewModel.password, prompt: Text("Password").foregroundColor(.gray))
+                TextField("", text: $viewModel.email, prompt: Text("Email").foregroundColor(.gray))
                     .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                     .modifier(TextFieldModifer())
                 
@@ -60,21 +60,21 @@ struct AddPasswordView: View {
             Spacer()
             
             NavigationLink {
-                RegisterView()
+                AddUsernameView()
                     .navigationBarBackButtonHidden()
             } label: {
                 
                 Text("Next")
                     .foregroundColor(.white)
-                    .background(viewModel.password.isEmpty ? Color.clear : Color("BloodRed"))
+                    .background(viewModel.email.isEmpty ? Color.clear : Color("BloodRed"))
                     .font(.headline)
                     .fontWeight(.semibold)
                     .frame(width: 360, height: 50)
                     .overlay(RoundedRectangle(cornerRadius: 6)
                         .stroke(.clear, lineWidth: 1))
             }
-            .background(viewModel.password.isEmpty ? Color.accentColor : Color("BloodRed"))
-            .disabled(viewModel.password.isEmpty)
+            .background(viewModel.email.isEmpty ? Color.accentColor : Color("BloodRed"))
+            .disabled(viewModel.email.isEmpty || !viewModel.email.contains("@"))
             Spacer()
             
         }
@@ -97,6 +97,6 @@ struct AddPasswordView: View {
 
 #Preview {
     ZStack{
-        AddPasswordView()
+        AddEmailView()
     }
 }
