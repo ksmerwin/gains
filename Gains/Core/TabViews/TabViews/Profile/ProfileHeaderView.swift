@@ -24,11 +24,23 @@ struct ProfileHeaderView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     if let fullname = user.fullname {
                         Text(fullname)
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.vertical,5)
+                        Text(user.username)
+                            .font(.footnote)
+                        
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                    }
+                    else {
+                        Text(user.username)
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
-                        
                     }
+                    
                     if let level = user.level {
                         Text("\(level.capitalized) Lifter")
                             .font(.footnote)
@@ -87,22 +99,22 @@ struct ProfileHeaderView: View {
                 //action button
                 Button(action: {
                     if user.isCurrentUser {
-                        showEditProfile.toggle()
+                        print("add workout split")
                     }
                     else {
                         print("follow")
                     }
                     
                 }, label: {
-                    Text(user.isCurrentUser ? "Edit Profile" : "Follow")
+                    Text(user.isCurrentUser ? "Add Workout Split" : "Follow")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .frame(width: 180, height: 45)
-                        .foregroundColor(user.isCurrentUser ? .black : .white)
-                        .background(user.isCurrentUser ? .white : Color("BloodRed"))
+                        .foregroundColor(.white)
+                        .background(Color("BloodRed"))
                         .cornerRadius(6)
                         .overlay(RoundedRectangle(cornerRadius: 6)
-                            .stroke(user.isCurrentUser ? .gray : .clear, lineWidth: 1))
+                            .stroke(Color.clear, lineWidth: 1))
                 })
             }
             
