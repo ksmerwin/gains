@@ -14,7 +14,7 @@ struct TextFieldModifer: ViewModifier {
         content
             .padding(16)
             .background(Color("DarkBlack"))
-        //  need to find darker gray almost black
+        
             .cornerRadius(10)
             .padding(.horizontal, 16)
             .padding(.top)

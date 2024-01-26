@@ -8,43 +8,56 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel = HomeViewModel()
     
     init() {
-
-            //Use this if NavigationBarTitle is with displayMode = .inline
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        }
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+    }
     
     var body: some View {
+        
         NavigationStack {
             ScrollView {
                 LazyVStack() {
-                    ForEach(Post.MOCK_POSTS) { post in
+                    ForEach(viewModel.posts) { post in
+                        NavigationLink(value: post) {
+                            UserPostHeaderView(post: post)
+                        }
                         FeedCell(post: post)
                     }
+                    
                 }
+            }
+            .navigationDestination(for: Post.self, destination: { post in
+                if let user = post.user {
+                    ProfileView(user: user)
+                }
+                    
+            }
+            
+            
+            )
                 
-            }
-            .navigationTitle("Home")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-//
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "paperplane")
-                        .imageScale(.large)
+                .navigationTitle("Home")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Image(systemName: "paperplane")
+                            .imageScale(.large)
+                    }
                 }
+                .toolbarColorScheme(.dark, for: .navigationBar)
+                .toolbarBackground(Color("DarkBlack"), for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .background(Color.black)
             }
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(Color("DarkBlack"), for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
             .background(Color.black)
         }
-        .background(Color.black)
+        
     }
-       
-}
-
-#Preview {
-    HomeView()
-}
+    
+    #Preview {
+        HomeView()
+    }

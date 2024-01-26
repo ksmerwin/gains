@@ -24,15 +24,13 @@ struct MainTabView: View {
                 //SearchView()
                     .onAppear{selectedIndex = 1}
                     .tabItem { Image(systemName: "magnifyingglass") }.tag(1)
-                Text("Add Workout")
-                //UploadPostView(tabIndex: $selectedIndex)
+                UploadPostView(tabIndex: $selectedIndex)
                     .onAppear{selectedIndex = 2}
                     .tabItem { Image(systemName: "plus") }.tag(2)
                 Text("Messages")
                     .onAppear{selectedIndex = 3}
                     .tabItem { Image(systemName: "heart") }.tag(3)
                 CurrentProfileView(user: user)
-                //CurrentProfileView(user: user)
                     .onAppear{selectedIndex = 4}
                     .tabItem { Image(systemName: "person") }.tag(4)
             }

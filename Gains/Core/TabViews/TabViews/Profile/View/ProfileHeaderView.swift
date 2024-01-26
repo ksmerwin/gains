@@ -121,9 +121,9 @@ struct ProfileHeaderView: View {
             Divider()
         }
         .background(Color("DarkBlack"))
-        //        .fullScreenCover(isPresented: $showEditProfile, content: {
-        //            EditProfileView(user: user)
-        //        })
+                .fullScreenCover(isPresented: $showEditProfile, content: {
+                    EditProfileView(user: user)
+                })
         
     }
 }
