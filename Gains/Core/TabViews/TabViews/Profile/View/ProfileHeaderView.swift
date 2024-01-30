@@ -10,7 +10,8 @@ import SwiftUI
 struct ProfileHeaderView: View {
     let user: User
     @State private var showEditProfile = false
-    
+    @State private var showAddWorkoutSplit = false
+    @State private var workOutSplit = WorkoutSplit.EMPTY_WORKOUT_SPLIT
     var body: some View {
         VStack(spacing: 10){
             //pic and stats
@@ -99,6 +100,7 @@ struct ProfileHeaderView: View {
                 //action button
                 Button(action: {
                     if user.isCurrentUser {
+                        showAddWorkoutSplit.toggle()
                         print("add workout split")
                     }
                     else {
@@ -123,6 +125,9 @@ struct ProfileHeaderView: View {
         .background(Color("DarkBlack"))
                 .fullScreenCover(isPresented: $showEditProfile, content: {
                     EditProfileView(user: user)
+                })
+                .fullScreenCover(isPresented: $showAddWorkoutSplit, content: {
+                    AddWorkoutSplitView(split: workOutSplit)
                 })
         
     }

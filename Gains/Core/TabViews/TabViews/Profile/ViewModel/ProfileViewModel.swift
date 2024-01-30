@@ -10,6 +10,7 @@ import Foundation
 class ProfileViewModel: ObservableObject {
     private let user: User
     @Published var posts = [Post]()
+    @Published var workoutSplits = [WorkoutSplit]()
     
     init(user: User) {
         self.user = user

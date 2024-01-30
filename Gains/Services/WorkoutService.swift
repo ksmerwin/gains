@@ -16,7 +16,7 @@ struct WorkoutService {
 
     
     static func fetchAllExercises() async throws -> [Exercise] {
-        let snapshot = try await Firestore.firestore().collection("exercises").getDocuments()
+        let snapshot = try await exerciseCollection.getDocuments()
         
         
         //$0 is each element in the array (of the document)

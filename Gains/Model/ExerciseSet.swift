@@ -21,4 +21,6 @@ extension ExerciseSet {
         .init(id: NSUUID().uuidString, sets: 2, reps: 8, exercise: Exercise.MOCK_EXERCISE[0]),
         .init(id: NSUUID().uuidString, sets: 3, reps: 8, exercise: Exercise.MOCK_EXERCISE[0]),
         .init(id: NSUUID().uuidString, sets: 4, reps: 8, exercise: Exercise.MOCK_EXERCISE[0])]
+    
+    static var EMPTY_EXERCISE_SET: [ExerciseSet] = []
 }

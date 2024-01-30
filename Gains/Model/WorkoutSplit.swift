@@ -24,4 +24,6 @@ extension WorkoutSplit {
         .init(id: NSUUID().uuidString, ownerUid: NSUUID().uuidString, name: "Stallone",  description: "a little work out split for the boys", workouts: Workout.MOCK_WORKOUT),
         .init(id: NSUUID().uuidString, ownerUid: NSUUID().uuidString, name: "Jeff",  description: "a little work out split for the boys", workouts: Workout.MOCK_WORKOUT),
         .init(id: NSUUID().uuidString, ownerUid: NSUUID().uuidString, name: "Arnold",  description: "a little work out split for the boys", workouts: Workout.MOCK_WORKOUT)]
+    
+    static var EMPTY_WORKOUT_SPLIT: WorkoutSplit = .init(id: NSUUID().uuidString, ownerUid: NSUUID().uuidString, name: "",  description: "", workouts: [])
 }

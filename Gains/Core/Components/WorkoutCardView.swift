@@ -35,7 +35,7 @@ struct WorkoutCardView: View {
                 }
                 
                 // exercises sets and reps
-                ForEach(workout.exercises, id: \.self.id) { exercise in
+                ForEach(workout.exerciseSets, id: \.self.id) { exercise in
                     HStack {
                         
                         Text(" \(exercise.exercise.name)")                              .foregroundColor(.black)
