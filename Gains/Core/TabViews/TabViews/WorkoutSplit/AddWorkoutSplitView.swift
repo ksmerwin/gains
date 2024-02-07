@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct AddWorkoutSplitView: View {
+    let user: User
     @Environment(\.dismiss) var dismiss
-    @StateObject var viewModel: AddWorkoutSplitViewModel
     @State private var showAddWorkout = false
+    @StateObject var viewModel: AddWorkoutSplitViewModel
     
-    init(split: WorkoutSplit) {
-        self._viewModel = StateObject(wrappedValue: AddWorkoutSplitViewModel(split: split))
+
+    init(user: User) {
+        self.user = user
+        self._viewModel = StateObject(wrappedValue: AddWorkoutSplitViewModel(user: user))
+       
     }
     
     
@@ -51,21 +55,18 @@ struct AddWorkoutSplitView: View {
                 }
                 
                 VStack {
-                    EditRowView(title: "Name", placeholder: "Enter the name of the Workout Split", text: $viewModel.split.name)
+                    EditRowView(title: "Name", placeholder: "Enter the name of the Workout Split", text: $viewModel.name)
                     
                     EditRowView(title: "Description",placeholder: "Enter the Description of the Split", text: $viewModel.description)
                     
                     VStack {
-                        //                        List {
-                        ForEach($viewModel.split.workouts) { workout in
+                     
+                        ForEach($viewModel.workouts) { workout in
                             WorkoutView(workout: workout)
-                            
                             Divider()
                                 .background(Color.white)
-                            //                            }
-                            //                        .onMove(perform: move)
-                            //                            .onDelete(perform: deleteItem)
                         }
+                        
                         
                         
                         Button(action: {
@@ -106,13 +107,8 @@ struct AddWorkoutSplitView: View {
 struct WorkoutView: View {
     @Binding var workout: Workout
     
-    
-    
-    
     var body: some View {
         VStack{
-            
-            
             TextField("Name", text: $workout.name)
                 .foregroundColor(.white)
                 .fontWeight(.semibold)
@@ -130,7 +126,6 @@ struct WorkoutView: View {
                 .cornerRadius(8)
             
             
-            
             ForEach($workout.exerciseSets) { exerciseSet in
                 HStack {
                     Text(exerciseSet.wrappedValue.exercise.name)
@@ -138,19 +133,19 @@ struct WorkoutView: View {
                     Spacer()
                     HStack {
                         Picker("Sets", selection: exerciseSet.sets) {
-                                ForEach(1..<100) {
-                                    Text("\($0) sets")
-                                        .foregroundColor(.white)
-                                }
+                            ForEach(0..<100) {
+                                Text("\($0) sets")
+                                    .foregroundColor(.white)
                             }
+                        }
                         .pickerStyle(.wheel)
                         .frame(width: 100, height: 50)
                         Picker("Reps", selection: exerciseSet.reps) {
-                                ForEach(1..<100) {
-                                    Text("\($0) reps")
-                                        .foregroundColor(.white)
-                                }
+                            ForEach(0..<100) {
+                                Text("\($0) reps")
+                                    .foregroundColor(.white)
                             }
+                        }
                         .pickerStyle(.wheel)
                         .frame(width: 100, height: 50)
                     }
@@ -202,5 +197,5 @@ struct EditRowView: View {
 }
 
 #Preview {
-    AddWorkoutSplitView(split: WorkoutSplit.MOCK_WORKOUT_SPLIT[2])
+    AddWorkoutSplitView(user: User.MOCK_USERS[0])
 }

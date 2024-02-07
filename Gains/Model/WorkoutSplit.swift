@@ -14,8 +14,8 @@ struct WorkoutSplit: Identifiable, Hashable, Codable {
     var name: String
     var description: String?
     var workouts: [Workout]
-    
-    
+    var user : User?
+
 }
 
 extension WorkoutSplit {

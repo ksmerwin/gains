@@ -29,21 +29,11 @@ struct ProfilePostsView: View {
                 }
                 
             }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading)  {
-//                    Image(systemName: "chevron.left")
-//                        .imageScale(.large)
-//                        .onTapGesture {
-//                            dismiss()
-//                        }
-//                }
-//            }
             .navigationTitle("Posts")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(Color("DarkBlack"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .background(Color.black)
             .background(Color.black)
         }
 //    }

@@ -14,16 +14,24 @@ import FirebaseAuth
 
 @MainActor
 class AddWorkoutSplitViewModel: ObservableObject {
-    @Published var split: WorkoutSplit
+    let user: User
     
+    @Published var workouts = [Workout]()
     @Published var allExercises = [Exercise]()
-    
-    
-    @Published  var searchString: String = ""
-    @Published  var categoryFilter: String = "All"
-    
     @Published var selectedExercises: Set<Exercise> = []
+    @Published var searchString: String = ""
+    @Published var name = ""
+    @Published var categoryFilter: String = "All"
+    @Published var description = ""
     
+    
+    
+    
+    init(user: User) {
+        self.user = user
+        Task { try await fetchAllExercises() }
+        
+    }
     
     
     var filteredExercises: [Exercise] {
@@ -40,61 +48,30 @@ class AddWorkoutSplitViewModel: ObservableObject {
         }
     }
     
-    
-    
-    
-
-    
-//    @Published var split: WorkoutSplit = emptySplit {
-//        
-//    }
-//    
-    
-    @Published var description = ""
-    
-    
-    
-    init(split: WorkoutSplit) {
-        self.split = split
-        
-        if let description = split.description {
-            self.description = description
-        }
-        
-        Task { try await fetchAllExercises() }
-        
-    }
-    
-    
     @MainActor
     func fetchAllExercises() async throws {
         self.allExercises = try await WorkoutService.fetchAllExercises()
     }
     
-    var emptySplit: WorkoutSplit {
-        return WorkoutSplit.MOCK_WORKOUT_SPLIT[0]
-    }
-    
     
     func addWorkoutToSplit() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        print(self.split.workouts)
         let exerciseSets = selectedExercises.map { exercise in
-            return ExerciseSet(id: NSUUID().uuidString, sets: 0, reps: 0, exercise: exercise)
-           }
-
-        let workout = Workout(id:  NSUUID().uuidString, ownerUid: uid, splitId: self.split.id, name: "", exerciseSets: exerciseSets, dayOfTheWeek: "")
-        self.split.workouts.insert(workout, at: self.split.workouts.endIndex)
+            return ExerciseSet(id: NSUUID().uuidString, sets: 1, reps: 1, exercise: exercise)
+        }
+        let workout = Workout(id:  NSUUID().uuidString, ownerUid: user.id, name: "", exerciseSets: exerciseSets, dayOfTheWeek: "")
+        self.workouts.insert(workout, at: workouts.endIndex)
         selectedExercises = []
     }
     
     
+    
+    
+    
     func uploadWorkoutSplit() async throws {
         let splitRef = Firestore.firestore().collection("workoutSplits").document()
-        split.description = description
-        guard let encodedSplit = try? Firestore.Encoder().encode(split) else { return }
+        
+        let workoutSplit = WorkoutSplit(id: NSUUID().uuidString, ownerUid: user.id, name: name, description: description, workouts: workouts)
+        guard let encodedSplit = try? Firestore.Encoder().encode(workoutSplit) else { return }
         try await splitRef.setData(encodedSplit)
     }
-    
-    
 }

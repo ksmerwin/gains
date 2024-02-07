@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B61AB0A2B6C1EDC006547C5 /* WorkoutSplitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB092B6C1EDB006547C5 /* WorkoutSplitsView.swift */; };
+		4B61AB0D2B72C35B006547C5 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB0C2B72C35B006547C5 /* InboxView.swift */; };
+		4B61AB102B72C456006547C5 /* ActiveNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB0F2B72C456006547C5 /* ActiveNowView.swift */; };
+		4B61AB122B72C61F006547C5 /* InboxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB112B72C61F006547C5 /* InboxRowView.swift */; };
+		4B61AB162B72CC1C006547C5 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB152B72CC1C006547C5 /* ChatView.swift */; };
+		4B61AB182B72CF10006547C5 /* ChatMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB172B72CF10006547C5 /* ChatMessageCellView.swift */; };
+		4B61AB1A2B72D1A1006547C5 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB192B72D1A1006547C5 /* ChatBubble.swift */; };
+		4B61AB1C2B72D4B8006547C5 /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB1B2B72D4B8006547C5 /* InboxViewModel.swift */; };
+		4B61AB1E2B72E04C006547C5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB1D2B72E04C006547C5 /* Message.swift */; };
+		4B61AB202B72E183006547C5 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB1F2B72E183006547C5 /* MessageService.swift */; };
+		4B61AB222B72E4A0006547C5 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB212B72E4A0006547C5 /* ChatViewModel.swift */; };
+		4B61AB272B73DFB1006547C5 /* InboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB262B73DFB1006547C5 /* InboxService.swift */; };
+		4B61AB292B73EFE0006547C5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB282B73EFE0006547C5 /* Date.swift */; };
+		4B61AB2B2B73F5FF006547C5 /* ActiveNowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB2A2B73F5FF006547C5 /* ActiveNowViewModel.swift */; };
 		4B88B46F2B488C5E00F5F0F4 /* GainsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88B46E2B488C5E00F5F0F4 /* GainsApp.swift */; };
 		4B88B4712B488C5E00F5F0F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88B4702B488C5E00F5F0F4 /* ContentView.swift */; };
 		4B88B4732B488C6000F5F0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B88B4722B488C6000F5F0F4 /* Assets.xcassets */; };
@@ -44,7 +58,6 @@
 		4B90210C2B641EE400A4EDA3 /* UserPostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B90210B2B641EE400A4EDA3 /* UserPostHeaderView.swift */; };
 		4B90210E2B643B3300A4EDA3 /* AddWorkoutSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B90210D2B643B3300A4EDA3 /* AddWorkoutSplitView.swift */; };
 		4B9021112B643EEC00A4EDA3 /* AddWorkoutSplitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9021102B643EEC00A4EDA3 /* AddWorkoutSplitViewModel.swift */; };
-		4B9021132B6453CE00A4EDA3 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9021122B6453CE00A4EDA3 /* WorkoutView.swift */; };
 		4B9021152B682B9700A4EDA3 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9021142B682B9700A4EDA3 /* AddWorkoutView.swift */; };
 		4B9C678F2B4EF56F00A7A6CC /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C678E2B4EF56F00A7A6CC /* AddEmailView.swift */; };
 		4B9C67912B4EF59A00A7A6CC /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9C67902B4EF59A00A7A6CC /* AddPasswordView.swift */; };
@@ -85,6 +98,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B61AB092B6C1EDB006547C5 /* WorkoutSplitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSplitsView.swift; sourceTree = "<group>"; };
+		4B61AB0C2B72C35B006547C5 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		4B61AB0F2B72C456006547C5 /* ActiveNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowView.swift; sourceTree = "<group>"; };
+		4B61AB112B72C61F006547C5 /* InboxRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRowView.swift; sourceTree = "<group>"; };
+		4B61AB152B72CC1C006547C5 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4B61AB172B72CF10006547C5 /* ChatMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCellView.swift; sourceTree = "<group>"; };
+		4B61AB192B72D1A1006547C5 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		4B61AB1B2B72D4B8006547C5 /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
+		4B61AB1D2B72E04C006547C5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4B61AB1F2B72E183006547C5 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		4B61AB212B72E4A0006547C5 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		4B61AB262B73DFB1006547C5 /* InboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxService.swift; sourceTree = "<group>"; };
+		4B61AB282B73EFE0006547C5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4B61AB2A2B73F5FF006547C5 /* ActiveNowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowViewModel.swift; sourceTree = "<group>"; };
 		4B88B46B2B488C5E00F5F0F4 /* Gains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B88B46E2B488C5E00F5F0F4 /* GainsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainsApp.swift; sourceTree = "<group>"; };
 		4B88B4702B488C5E00F5F0F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,7 +146,6 @@
 		4B90210B2B641EE400A4EDA3 /* UserPostHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostHeaderView.swift; sourceTree = "<group>"; };
 		4B90210D2B643B3300A4EDA3 /* AddWorkoutSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutSplitView.swift; sourceTree = "<group>"; };
 		4B9021102B643EEC00A4EDA3 /* AddWorkoutSplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutSplitViewModel.swift; sourceTree = "<group>"; };
-		4B9021122B6453CE00A4EDA3 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		4B9021142B682B9700A4EDA3 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		4B9C678E2B4EF56F00A7A6CC /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
 		4B9C67902B4EF59A00A7A6CC /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
@@ -173,6 +199,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B61AB0B2B72C333006547C5 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				4B61AB142B72CC10006547C5 /* Chat */,
+				4B61AB132B72C62A006547C5 /* Inbox */,
+				4B61AB0E2B72C43A006547C5 /* ActiveNow */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		4B61AB0E2B72C43A006547C5 /* ActiveNow */ = {
+			isa = PBXGroup;
+			children = (
+				4B61AB0F2B72C456006547C5 /* ActiveNowView.swift */,
+				4B61AB2A2B73F5FF006547C5 /* ActiveNowViewModel.swift */,
+			);
+			path = ActiveNow;
+			sourceTree = "<group>";
+		};
+		4B61AB132B72C62A006547C5 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				4B61AB0C2B72C35B006547C5 /* InboxView.swift */,
+				4B61AB112B72C61F006547C5 /* InboxRowView.swift */,
+				4B61AB1B2B72D4B8006547C5 /* InboxViewModel.swift */,
+				4B61AB262B73DFB1006547C5 /* InboxService.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		4B61AB142B72CC10006547C5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4B61AB152B72CC1C006547C5 /* ChatView.swift */,
+				4B61AB172B72CF10006547C5 /* ChatMessageCellView.swift */,
+				4B61AB192B72D1A1006547C5 /* ChatBubble.swift */,
+				4B61AB212B72E4A0006547C5 /* ChatViewModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4B61AB232B72F43E006547C5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4B88B4622B488C5E00F5F0F4 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +276,7 @@
 				4B88B49A2B488CD900F5F0F4 /* Extensions */,
 				4B88B49D2B488D2300F5F0F4 /* Model */,
 				4B88B49B2B488CE500F5F0F4 /* Services */,
+				4B61AB232B72F43E006547C5 /* Utils */,
 				4B88B4A32B488F3E00F5F0F4 /* GoogleService-Info.plist */,
 				4B88B4722B488C6000F5F0F4 /* Assets.xcassets */,
 				4B88B4742B488C6000F5F0F4 /* Preview Content */,
@@ -257,6 +332,7 @@
 		4B88B49A2B488CD900F5F0F4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4B61AB282B73EFE0006547C5 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +344,7 @@
 				4B9020E82B51C2F600A4EDA3 /* WorkoutService.swift */,
 				4B9020EC2B51CB8500A4EDA3 /* PostService.swift */,
 				4B9020FA2B59B2C500A4EDA3 /* ImageUploader.swift */,
+				4B61AB1F2B72E183006547C5 /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -284,7 +361,6 @@
 				4B9020F22B51E93D00A4EDA3 /* MiniWorkSplitView.swift */,
 				4B9021052B5AE23C00A4EDA3 /* MiniProfilePostsView.swift */,
 				4B90210B2B641EE400A4EDA3 /* UserPostHeaderView.swift */,
-				4B9021122B6453CE00A4EDA3 /* WorkoutView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,6 +374,7 @@
 				4BF5E3862B4CB8D3008E3216 /* Workout.swift */,
 				4BF5E3882B4CB980008E3216 /* Exercise.swift */,
 				4B9020EA2B51C3BA00A4EDA3 /* ExerciseSet.swift */,
+				4B61AB1D2B72E04C006547C5 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +451,7 @@
 		4B9020DF2B4F2D7D00A4EDA3 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
+				4B61AB0B2B72C333006547C5 /* Messaging */,
 				4B90210F2B643EC900A4EDA3 /* WorkoutSplit */,
 				4B9020FC2B59D04A00A4EDA3 /* UploadPost */,
 				4B9020E32B4F440E00A4EDA3 /* Profile */,
@@ -408,6 +486,7 @@
 				4B9020F42B59B1E900A4EDA3 /* EditProfileView.swift */,
 				4B9021032B5ADFB400A4EDA3 /* ProfilePostsView.swift */,
 				4B9021092B5B13B000A4EDA3 /* ProfileView.swift */,
+				4B61AB092B6C1EDB006547C5 /* WorkoutSplitsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -613,21 +692,25 @@
 				4BF5E3742B48BC72008E3216 /* RegisterViewModel.swift in Sources */,
 				4B9020F52B59B1E900A4EDA3 /* EditProfileView.swift in Sources */,
 				4B9021082B5B120900A4EDA3 /* HomeViewModel.swift in Sources */,
-				4B9021132B6453CE00A4EDA3 /* WorkoutView.swift in Sources */,
 				4B9020F12B51DCE100A4EDA3 /* WorkoutCardView.swift in Sources */,
+				4B61AB292B73EFE0006547C5 /* Date.swift in Sources */,
+				4B61AB0A2B6C1EDC006547C5 /* WorkoutSplitsView.swift in Sources */,
 				4BF5E3722B48B2D0008E3216 /* TextFieldModifer.swift in Sources */,
 				4BF5E3832B4CABD6008E3216 /* Post.swift in Sources */,
 				4B9021062B5AE23C00A4EDA3 /* MiniProfilePostsView.swift in Sources */,
+				4B61AB102B72C456006547C5 /* ActiveNowView.swift in Sources */,
 				4B9C67932B4EF5AE00A7A6CC /* AddUsernameView.swift in Sources */,
 				4B88B4712B488C5E00F5F0F4 /* ContentView.swift in Sources */,
 				4B9C67972B4F060D00A7A6CC /* UserService.swift in Sources */,
 				4B9020E52B4F442800A4EDA3 /* ProfileHeaderView.swift in Sources */,
 				4B9020E72B4F446800A4EDA3 /* UserStatView.swift in Sources */,
 				4B90210A2B5B13B000A4EDA3 /* ProfileView.swift in Sources */,
+				4B61AB1C2B72D4B8006547C5 /* InboxViewModel.swift in Sources */,
 				4B9021002B59D0A700A4EDA3 /* UploadPostViewModel.swift in Sources */,
 				4B9020EF2B51D17A00A4EDA3 /* WorkoutSplitView.swift in Sources */,
 				4B90210C2B641EE400A4EDA3 /* UserPostHeaderView.swift in Sources */,
 				4BF5E3892B4CB980008E3216 /* Exercise.swift in Sources */,
+				4B61AB1E2B72E04C006547C5 /* Message.swift in Sources */,
 				4BF5E3792B48F972008E3216 /* User.swift in Sources */,
 				4BF5E3812B4CAB29008E3216 /* HomeView.swift in Sources */,
 				4BF5E37B2B48FC92008E3216 /* ContentViewModel.swift in Sources */,
@@ -635,7 +718,10 @@
 				4B9020F32B51E93D00A4EDA3 /* MiniWorkSplitView.swift in Sources */,
 				4B88B4B62B4891C600F5F0F4 /* LoginView.swift in Sources */,
 				4BF5E3872B4CB8D3008E3216 /* Workout.swift in Sources */,
+				4B61AB1A2B72D1A1006547C5 /* ChatBubble.swift in Sources */,
 				4B9020FB2B59B2C500A4EDA3 /* ImageUploader.swift in Sources */,
+				4B61AB182B72CF10006547C5 /* ChatMessageCellView.swift in Sources */,
+				4B61AB122B72C61F006547C5 /* InboxRowView.swift in Sources */,
 				4B88B46F2B488C5E00F5F0F4 /* GainsApp.swift in Sources */,
 				4BF5E3852B4CB60D008E3216 /* WorkoutSplit.swift in Sources */,
 				4BF5E38D2B4DE783008E3216 /* CircularProfileImageView.swift in Sources */,
@@ -648,9 +734,15 @@
 				4B9020EB2B51C3BA00A4EDA3 /* ExerciseSet.swift in Sources */,
 				4B9C678F2B4EF56F00A7A6CC /* AddEmailView.swift in Sources */,
 				4B9020ED2B51CB8500A4EDA3 /* PostService.swift in Sources */,
+				4B61AB272B73DFB1006547C5 /* InboxService.swift in Sources */,
 				4BF5E3762B48F6EC008E3216 /* AuthService.swift in Sources */,
+				4B61AB162B72CC1C006547C5 /* ChatView.swift in Sources */,
 				4B9C67912B4EF59A00A7A6CC /* AddPasswordView.swift in Sources */,
 				4BF5E37E2B4CA9DB008E3216 /* MainTabView.swift in Sources */,
+				4B61AB0D2B72C35B006547C5 /* InboxView.swift in Sources */,
+				4B61AB2B2B73F5FF006547C5 /* ActiveNowViewModel.swift in Sources */,
+				4B61AB222B72E4A0006547C5 /* ChatViewModel.swift in Sources */,
+				4B61AB202B72E183006547C5 /* MessageService.swift in Sources */,
 				4B90210E2B643B3300A4EDA3 /* AddWorkoutSplitView.swift in Sources */,
 				4B9020F92B59B22D00A4EDA3 /* EditProfileViewModel.swift in Sources */,
 				4B9021042B5ADFB400A4EDA3 /* ProfilePostsView.swift in Sources */,

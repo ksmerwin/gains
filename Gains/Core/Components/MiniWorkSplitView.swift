@@ -8,43 +8,58 @@
 import SwiftUI
 
 struct MiniWorkSplitView: View {
-    let split: WorkoutSplit
+    @StateObject var viewModel: ProfileViewModel
+    
+    init(user: User) {
+        self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
+    }
+    
+    
+    
     var body: some View {
-        ZStack {
-            
-        
-        
-            VStack(alignment: .center) {
-            Text(split.name)
-                .font(.headline)
-                .foregroundColor(.black)
-                .cornerRadius(15)
-                .padding(2)
-        
-                if let description = split.description {
-                    
-                Text(description)
-                    .font(.subheadline)
-                    .foregroundColor(.black)
-                    .fontWeight(.light)
+        HStack {
+            if (viewModel.workoutSplits.isEmpty){
+                Image(systemName: "figure.core.training")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 175, height: 150)
+                    .clipped()
+                    .foregroundColor(.white)
+                Image(systemName: "figure.cross.training")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 175, height: 150)
+                    .clipped()
+                    .foregroundColor(.white)
+            }
+            else {
+
+                ForEach(viewModel.workoutSplits.prefix(2)) { split in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(split.name)
+                            .font(.headline)
+                        if let desc = split.description {
+                            Text(desc)
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                            Spacer()
+                        }
+                    }
+                    .frame(minWidth: 140)
+                    .frame(minHeight: 100)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color("CloudWhite")))
                 }
-                
-            Spacer()
+            }
             
         }
-        .padding(20)
-        .multilineTextAlignment(.center)
-        .background(Color("CloudWhite"))
-    }
-        .frame(width: 175, height: 150)
-        .border(Color("DarkBlack"))
-        .cornerRadius(25)
     }
 }
 
-    
+
+
 
 
 #Preview {
-    MiniWorkSplitView(split: WorkoutSplit.MOCK_WORKOUT_SPLIT[0])
+    MiniWorkSplitView(user: User.MOCK_USERS[0])
 }

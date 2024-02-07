@@ -11,7 +11,18 @@ struct ProfileHeaderView: View {
     let user: User
     @State private var showEditProfile = false
     @State private var showAddWorkoutSplit = false
-    @State private var workOutSplit = WorkoutSplit.EMPTY_WORKOUT_SPLIT
+    
+    
+    //    @StateObject var viewModel: AddWorkoutSplitViewModel
+    //    @State private var workOutSplit: WorkoutSplit
+    
+    //    init(user: User) {
+    //        self.user = user
+    //        self._viewModel = StateObject(wrappedValue: AddWorkoutSplitViewModel(user: user))
+    //    }
+    
+    
+    
     var body: some View {
         VStack(spacing: 10){
             //pic and stats
@@ -76,26 +87,43 @@ struct ProfileHeaderView: View {
             
             HStack {
                 
-                //action button
-                Button(action: {
-                    if user.isCurrentUser {
-                        showEditProfile.toggle()
+                if (!user.isCurrentUser) {
+                    NavigationLink {
+                        ChatView(user: user)
+                        
                     }
-                    else {
-                        print("Chat")
-                    }
-                    
-                }, label: {
-                    Text(user.isCurrentUser ? "Edit Profile" : "Chat")
+                label: {
+                    Text("Chat")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .frame(width: 180, height: 45)
-                        .foregroundColor(user.isCurrentUser ? .black : .black)
-                        .background(user.isCurrentUser ? .white : Color("CloudWhite"))
+                        .foregroundColor(.black)
+                        .background(Color("CloudWhite"))
                         .cornerRadius(6)
                         .overlay(RoundedRectangle(cornerRadius: 6)
-                            .stroke(user.isCurrentUser ? .gray : .clear, lineWidth: 1))
-                })
+                            .stroke(lineWidth: 1))
+                }
+                }
+                
+                else {
+                    
+                    
+                    //action button
+                    Button(action: {
+                        showEditProfile.toggle()
+                        
+                    }, label: {
+                        Text("Edit Profile")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .frame(width: 180, height: 45)
+                            .foregroundColor(.black)
+                            .background(.white )
+                            .cornerRadius(6)
+                            .overlay(RoundedRectangle(cornerRadius: 6)
+                                .stroke(.gray))
+                    })
+                }
                 
                 //action button
                 Button(action: {
@@ -123,12 +151,12 @@ struct ProfileHeaderView: View {
             Divider()
         }
         .background(Color("DarkBlack"))
-                .fullScreenCover(isPresented: $showEditProfile, content: {
-                    EditProfileView(user: user)
-                })
-                .fullScreenCover(isPresented: $showAddWorkoutSplit, content: {
-                    AddWorkoutSplitView(split: workOutSplit)
-                })
+        .fullScreenCover(isPresented: $showEditProfile, content: {
+            EditProfileView(user: user)
+        })
+        .fullScreenCover(isPresented: $showAddWorkoutSplit, content: {
+            AddWorkoutSplitView(user: user)
+        })
         
     }
 }

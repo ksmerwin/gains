@@ -34,30 +34,34 @@ struct HomeView: View {
                 if let user = post.user {
                     ProfileView(user: user)
                 }
-                    
-            }
-            
-            
-            )
                 
-                .navigationTitle("Home")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+            }
+                                   
+                                   
+            )
+            
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        InboxView()
+                    } label: {
                         Image(systemName: "paperplane")
                             .imageScale(.large)
                     }
                 }
-                .toolbarColorScheme(.dark, for: .navigationBar)
-                .toolbarBackground(Color("DarkBlack"), for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .background(Color.black)
             }
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(Color("DarkBlack"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
             .background(Color.black)
         }
-        
+        .background(Color.black)
     }
     
-    #Preview {
-        HomeView()
-    }
+}
+
+#Preview {
+    HomeView()
+}

@@ -19,8 +19,6 @@ struct WorkoutSplitView: View {
         VStack {
             ScrollView {
                 VStack {
-                    
-                    
                     Text(split.name)
                         .font(.largeTitle)
                         .foregroundColor(Color.white)
@@ -34,8 +32,6 @@ struct WorkoutSplitView: View {
                     }
                 }
                 .padding()
-                
-                
                 
                 LazyVGrid(columns: columns) {
                     ForEach(split.workouts, id: \.self.id) {workout in

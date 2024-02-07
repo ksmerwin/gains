@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct CurrentProfileView: View {
-    
-    
     let user: User
     
     var body: some View {
@@ -39,8 +37,10 @@ struct CurrentProfileView: View {
                 }
                     
                     MiniProfilePostsView(user: user)
-                    Button {
-                        print("Viw phoys")
+                    
+                    NavigationLink {
+                        WorkoutSplitsView(user: user)
+                        
                     }
                 label: {
                     Text("Workout Splits")
@@ -55,18 +55,7 @@ struct CurrentProfileView: View {
                     
                 }
                     
-                    HStack {
-                        ForEach(WorkoutSplit.MOCK_WORKOUT_SPLIT.prefix(2)) { split in
-                            MiniWorkSplitView(split: split)
-//                            Image(split.imageUrl)
-//                                .resizable()
-//                                .scaledToFill()
-//                                .frame(width: 175, height: 150)
-//                                .clipped()
-                                
-                        }
-                    }
-                    
+                    MiniWorkSplitView(user: user)
                     
                 }
                 

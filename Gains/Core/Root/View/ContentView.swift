@@ -30,3 +30,7 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+//Bugs
+// owner id on the upload workout
+

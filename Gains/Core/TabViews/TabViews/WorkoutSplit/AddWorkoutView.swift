@@ -25,14 +25,7 @@ private let categories:[BodyParts] = [
 
 struct AddWorkoutView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var viewModel: AddWorkoutSplitViewModel
-    
-    
-//    
-//    init(split: WorkoutSplit) {
-//        self._viewModel = StateObject(wrappedValue: AddWorkoutSplitViewModel(split: split))
-//    }
-//    
+    @ObservedObject var viewModel: AddWorkoutSplitViewModel
     
     var body: some View {
         VStack{
@@ -137,8 +130,8 @@ struct MultipleSelectionRow: View {
         }
     }
 }
-
-
-#Preview {
-    AddWorkoutView(viewModel: AddWorkoutSplitViewModel(split: WorkoutSplit.MOCK_WORKOUT_SPLIT[0]))
-}
+//
+//
+//#Preview {
+//    AddWorkoutView(user: User.MOCK_USERS[0])
+//}
