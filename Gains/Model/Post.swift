@@ -20,6 +20,7 @@ struct Post: Identifiable, Hashable, Codable {
 //    var comments: Int
     var timestamp: Timestamp
     var user : User?
+    var didLike: Bool? = false
 }
 
 extension Post {
