@@ -21,6 +21,13 @@
 		4B61AB272B73DFB1006547C5 /* InboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB262B73DFB1006547C5 /* InboxService.swift */; };
 		4B61AB292B73EFE0006547C5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB282B73EFE0006547C5 /* Date.swift */; };
 		4B61AB2B2B73F5FF006547C5 /* ActiveNowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB2A2B73F5FF006547C5 /* ActiveNowViewModel.swift */; };
+		4B61AB2E2B7AC902006547C5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB2D2B7AC902006547C5 /* SearchView.swift */; };
+		4B61AB302B864992006547C5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB2F2B864992006547C5 /* SearchViewModel.swift */; };
+		4B61AB342B866E29006547C5 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB332B866E29006547C5 /* FollowService.swift */; };
+		4B61AB362B868848006547C5 /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB352B868848006547C5 /* FollowButton.swift */; };
+		4B61AB382B86B295006547C5 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB372B86B295006547C5 /* PostCellViewModel.swift */; };
+		4B61AB3A2B87E776006547C5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB392B87E776006547C5 /* Comment.swift */; };
+		4B61AB3C2B87F323006547C5 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61AB3B2B87F323006547C5 /* CommentsView.swift */; };
 		4B88B46F2B488C5E00F5F0F4 /* GainsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88B46E2B488C5E00F5F0F4 /* GainsApp.swift */; };
 		4B88B4712B488C5E00F5F0F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88B4702B488C5E00F5F0F4 /* ContentView.swift */; };
 		4B88B4732B488C6000F5F0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B88B4722B488C6000F5F0F4 /* Assets.xcassets */; };
@@ -112,6 +119,13 @@
 		4B61AB262B73DFB1006547C5 /* InboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxService.swift; sourceTree = "<group>"; };
 		4B61AB282B73EFE0006547C5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4B61AB2A2B73F5FF006547C5 /* ActiveNowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowViewModel.swift; sourceTree = "<group>"; };
+		4B61AB2D2B7AC902006547C5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4B61AB2F2B864992006547C5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		4B61AB332B866E29006547C5 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
+		4B61AB352B868848006547C5 /* FollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
+		4B61AB372B86B295006547C5 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		4B61AB392B87E776006547C5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4B61AB3B2B87F323006547C5 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		4B88B46B2B488C5E00F5F0F4 /* Gains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B88B46E2B488C5E00F5F0F4 /* GainsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainsApp.swift; sourceTree = "<group>"; };
 		4B88B4702B488C5E00F5F0F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -247,6 +261,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4B61AB2C2B7AC8E8006547C5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4B61AB2D2B7AC902006547C5 /* SearchView.swift */,
+				4B61AB2F2B864992006547C5 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		4B88B4622B488C5E00F5F0F4 = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +368,7 @@
 				4B9020EC2B51CB8500A4EDA3 /* PostService.swift */,
 				4B9020FA2B59B2C500A4EDA3 /* ImageUploader.swift */,
 				4B61AB1F2B72E183006547C5 /* MessageService.swift */,
+				4B61AB332B866E29006547C5 /* FollowService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -361,6 +385,7 @@
 				4B9020F22B51E93D00A4EDA3 /* MiniWorkSplitView.swift */,
 				4B9021052B5AE23C00A4EDA3 /* MiniProfilePostsView.swift */,
 				4B90210B2B641EE400A4EDA3 /* UserPostHeaderView.swift */,
+				4B61AB352B868848006547C5 /* FollowButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -375,6 +400,7 @@
 				4BF5E3882B4CB980008E3216 /* Exercise.swift */,
 				4B9020EA2B51C3BA00A4EDA3 /* ExerciseSet.swift */,
 				4B61AB1D2B72E04C006547C5 /* Message.swift */,
+				4B61AB392B87E776006547C5 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -451,6 +477,7 @@
 		4B9020DF2B4F2D7D00A4EDA3 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
+				4B61AB2C2B7AC8E8006547C5 /* Search */,
 				4B61AB0B2B72C333006547C5 /* Messaging */,
 				4B90210F2B643EC900A4EDA3 /* WorkoutSplit */,
 				4B9020FC2B59D04A00A4EDA3 /* UploadPost */,
@@ -465,6 +492,8 @@
 			children = (
 				4BF5E3802B4CAB29008E3216 /* HomeView.swift */,
 				4B9021072B5B120900A4EDA3 /* HomeViewModel.swift */,
+				4B61AB372B86B295006547C5 /* PostCellViewModel.swift */,
+				4B61AB3B2B87F323006547C5 /* CommentsView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -705,6 +734,7 @@
 				4B9020E52B4F442800A4EDA3 /* ProfileHeaderView.swift in Sources */,
 				4B9020E72B4F446800A4EDA3 /* UserStatView.swift in Sources */,
 				4B90210A2B5B13B000A4EDA3 /* ProfileView.swift in Sources */,
+				4B61AB302B864992006547C5 /* SearchViewModel.swift in Sources */,
 				4B61AB1C2B72D4B8006547C5 /* InboxViewModel.swift in Sources */,
 				4B9021002B59D0A700A4EDA3 /* UploadPostViewModel.swift in Sources */,
 				4B9020EF2B51D17A00A4EDA3 /* WorkoutSplitView.swift in Sources */,
@@ -723,17 +753,22 @@
 				4B61AB182B72CF10006547C5 /* ChatMessageCellView.swift in Sources */,
 				4B61AB122B72C61F006547C5 /* InboxRowView.swift in Sources */,
 				4B88B46F2B488C5E00F5F0F4 /* GainsApp.swift in Sources */,
+				4B61AB382B86B295006547C5 /* PostCellViewModel.swift in Sources */,
 				4BF5E3852B4CB60D008E3216 /* WorkoutSplit.swift in Sources */,
 				4BF5E38D2B4DE783008E3216 /* CircularProfileImageView.swift in Sources */,
 				4B9021152B682B9700A4EDA3 /* AddWorkoutView.swift in Sources */,
 				4B9021112B643EEC00A4EDA3 /* AddWorkoutSplitViewModel.swift in Sources */,
 				4BF5E38B2B4DE6AD008E3216 /* FeedCell.swift in Sources */,
+				4B61AB3C2B87F323006547C5 /* CommentsView.swift in Sources */,
+				4B61AB2E2B7AC902006547C5 /* SearchView.swift in Sources */,
 				4B9021022B5ADF8A00A4EDA3 /* ProfileViewModel.swift in Sources */,
 				4B9020E92B51C2F600A4EDA3 /* WorkoutService.swift in Sources */,
 				4B9020E12B4F2D9600A4EDA3 /* CurrentProfileView.swift in Sources */,
 				4B9020EB2B51C3BA00A4EDA3 /* ExerciseSet.swift in Sources */,
 				4B9C678F2B4EF56F00A7A6CC /* AddEmailView.swift in Sources */,
+				4B61AB362B868848006547C5 /* FollowButton.swift in Sources */,
 				4B9020ED2B51CB8500A4EDA3 /* PostService.swift in Sources */,
+				4B61AB342B866E29006547C5 /* FollowService.swift in Sources */,
 				4B61AB272B73DFB1006547C5 /* InboxService.swift in Sources */,
 				4BF5E3762B48F6EC008E3216 /* AuthService.swift in Sources */,
 				4B61AB162B72CC1C006547C5 /* ChatView.swift in Sources */,
@@ -743,6 +778,7 @@
 				4B61AB2B2B73F5FF006547C5 /* ActiveNowViewModel.swift in Sources */,
 				4B61AB222B72E4A0006547C5 /* ChatViewModel.swift in Sources */,
 				4B61AB202B72E183006547C5 /* MessageService.swift in Sources */,
+				4B61AB3A2B87E776006547C5 /* Comment.swift in Sources */,
 				4B90210E2B643B3300A4EDA3 /* AddWorkoutSplitView.swift in Sources */,
 				4B9020F92B59B22D00A4EDA3 /* EditProfileViewModel.swift in Sources */,
 				4B9021042B5ADFB400A4EDA3 /* ProfilePostsView.swift in Sources */,

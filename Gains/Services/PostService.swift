@@ -33,6 +33,23 @@ struct PostService {
         return try snapshot.documents.compactMap({ try $0.data(as: Post.self)})
     }
     
+    func fetchComments(_ postId: String) async throws -> [Comment] {
+        let snapshot = try await Firestore.firestore().collection("comments").document(postId).collection("comments").order(by: "timestamp", descending: true).getDocuments()
+        
+        var comments = try snapshot.documents.compactMap({ try $0.data(as: Comment.self)})
+        
+        for i in 0 ..< comments.count {
+            let comment = comments[i]
+            let authorId = comment.authorId
+            let commentUser = try await UserService.fetchUser(withUid: authorId)
+            comments[i].user = commentUser
+            
+        }
+        return comments
+        
+        
+    }
+    
     func likePost(_ post: Post, completion: @escaping() -> Void) {
         guard let uid =  AuthService.shared.currentUser?.id else { return }
         let postId = post.id
@@ -75,5 +92,44 @@ struct PostService {
                 
             }
     }
-
+    
+    
+    
+    //    func deleteCommentOnPost(post, index)
+    func deleteComment(_ post: Post, _ selectedComment: Comment, completion: @escaping() -> Void) {
+        let postId = post.id
+        let commentsRef = Firestore.firestore().collection("comments").document(postId).collection("comments")
+        
+        Firestore.firestore().collection("posts").document(postId)
+            .updateData(["comments": post.comments - 1]) { _ in
+                commentsRef.document(selectedComment.id).delete { _ in
+                    completion()
+                }
+            }
+        
+        //    }
+        //
+        
+        
+        
+        //        let newComment = Comment(authorId: currentUid, postId: postId, commentText: commentText, timestamp: Timestamp())
+        //        guard let commentData = try? Firestore.Encoder().encode(newComment) else { return }
+        
+        //        if let doc = Firestore.firestore().collection("comments").document(postId).collection("comments").document(selectedComment.id) {
+        //}
+    }
+    
+    
+    func commentOnPost(_ post: Post, _ commentText: String, completion: @escaping() -> Void) {
+        guard let currentUid = AuthService.shared.currentUser?.id else { return }
+        let postId = post.id
+        
+        Firestore.firestore().collection("posts").document(postId)
+            .updateData(["comments": post.comments + 1]) { _ in
+                completion()
+            }
+        let newComment = Comment(authorId: currentUid, postId: postId, commentText: commentText, timestamp: Timestamp())
+        guard let commentData = try? Firestore.Encoder().encode(newComment) else { return }
+        Firestore.firestore().collection("comments").document(postId).collection("comments").addDocument(data: commentData)
+    }
 }

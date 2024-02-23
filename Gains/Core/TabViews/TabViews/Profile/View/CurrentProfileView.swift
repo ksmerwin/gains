@@ -8,7 +8,14 @@
 import SwiftUI
 
 struct CurrentProfileView: View {
+//    @StateObject var viewModel: ProfileViewModel
+   
     let user: User
+    
+    init(user: User) {
+        self.user = user
+//        self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
+    }
     
     var body: some View {
         NavigationStack {

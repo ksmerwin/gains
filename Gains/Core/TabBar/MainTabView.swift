@@ -20,8 +20,7 @@ struct MainTabView: View {
                 HomeView()
                     .onAppear{selectedIndex = 0}
                     .tabItem { Image(systemName: "house") }.tag(0)
-                Text("Search")
-                //SearchView()
+                SearchView()
                     .onAppear{selectedIndex = 1}
                     .tabItem { Image(systemName: "magnifyingglass") }.tag(1)
                 UploadPostView(tabIndex: $selectedIndex)

@@ -13,6 +13,9 @@ struct ProfileHeaderView: View {
     @State private var showAddWorkoutSplit = false
     
     
+//    @StateObject var viewModel: ProfileViewModel
+//    
+    
     //    @StateObject var viewModel: AddWorkoutSplitViewModel
     //    @State private var workOutSplit: WorkoutSplit
     
@@ -76,9 +79,9 @@ struct ProfileHeaderView: View {
             }
             
             HStack(alignment: .center){
-                UserStatView(value: 3, title: "Workout Splits")
-                UserStatView(value: 12, title: "Followers")
-                UserStatView(value: 15, title: "Following")
+                UserStatView(value: 5, title: "Workout Splits")
+                UserStatView(value: 5, title: "Followers")
+                UserStatView(value: 5, title: "Following")
                 
             }
             .padding()
@@ -125,27 +128,36 @@ struct ProfileHeaderView: View {
                     })
                 }
                 
-                //action button
-                Button(action: {
-                    if user.isCurrentUser {
-                        showAddWorkoutSplit.toggle()
-                        print("add workout split")
-                    }
-                    else {
-                        print("follow")
-                    }
+                if (user.isCurrentUser) {
+                    Button(action: {showAddWorkoutSplit.toggle()}
+                          , label: {
+                        Text("Add Workout Split")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .frame(width: 180, height: 45)
+                            .foregroundColor(.white)
+                            .background(Color("BloodRed"))
+                            .cornerRadius(6)
+                            .overlay(RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color.clear, lineWidth: 1))
+                    })
+                }
+                else {
                     
-                }, label: {
-                    Text(user.isCurrentUser ? "Add Workout Split" : "Follow")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .frame(width: 180, height: 45)
-                        .foregroundColor(.white)
-                        .background(Color("BloodRed"))
-                        .cornerRadius(6)
-                        .overlay(RoundedRectangle(cornerRadius: 6)
-                            .stroke(Color.clear, lineWidth: 1))
-                })
+                    // follow button
+                    Button(action: {print("Follow")}
+                          , label: {
+                        Text("Follow")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .frame(width: 180, height: 45)
+                            .foregroundColor(.white)
+                            .background(Color("BloodRed"))
+                            .cornerRadius(6)
+                            .overlay(RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color.clear, lineWidth: 1))
+                    })
+                }
             }
             
             Divider()

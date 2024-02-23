@@ -19,8 +19,9 @@ struct User: Identifiable, Hashable, Codable {
     let email: String
     let level: String?
     // levels will be novice, advanced, expert, Pro
-    
-    
+//    var followers: [User]
+//    var following: [User]
+//    
     var isCurrentUser: Bool {
         guard let currentUid = Auth.auth().currentUser?.uid else {return false}
         return currentUid == id

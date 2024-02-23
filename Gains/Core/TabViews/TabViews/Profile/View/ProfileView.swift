@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ProfileView: View {
     
+//    @StateObject var viewModel: ProfileViewModel
+   
     let user: User
     
     init(user: User) {
         self.user = user
+//        self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
     }
     
     var body: some View {
-//        NavigationStack {
             
             ScrollView {
                 //header
@@ -76,7 +78,6 @@ struct ProfileView: View {
             }
             .background(Color("DarkBlack"))
         }
-//    }
 }
 
 #Preview {

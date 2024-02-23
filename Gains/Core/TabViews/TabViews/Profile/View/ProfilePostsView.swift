@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProfilePostsView: View {
     @StateObject var viewModel: ProfileViewModel
-    
     @Environment(\.dismiss) var dismiss
+    
     init(user: User) {
 
         self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
